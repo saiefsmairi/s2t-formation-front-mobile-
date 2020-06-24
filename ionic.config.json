@@ -1,0 +1,7 @@
+{
+  "name": "s2t-formation",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
