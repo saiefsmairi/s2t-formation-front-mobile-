@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Créer un compte Apprenant
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form  [formGroup]="form">
+    <ion-item lines="full">
+      <ion-label position="floating">CIN</ion-label>   
+      <ion-input type="text" required formControlName="cin" required maxlength="8"></ion-input>
+      <div style="color: red; padding-top: 0.2rem" *ngIf="f.cin.invalid&&f.cin.touched">Veuillez Entrez un CIN valid (8 chiffres)</div>
+
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input type="email" required formControlName="nom"></ion-input>
+      <div style="color: red; padding-top: 0.2rem" *ngIf="f.nom.invalid&&f.nom.touched">Votre Nom est obligatoire</div>
+
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating"  >prenom</ion-label>
+      <ion-input type="text" required formControlName="prenom"></ion-input>
+      <div style="color: red; padding-top: 0.2rem" *ngIf="f.prenom.invalid&&f.prenom.touched">Votre Prénom est obligatoire</div>
+
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating" >Email</ion-label>
+      <ion-input type="text" required formControlName="email"></ion-input>
+      <div style="color: red; padding-top: 0.2rem" *ngIf="f.email.invalid&&f.email.touched">Veuillez Entrez une adresse mail valid</div>
+
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Mot de passe</ion-label>
+      <ion-input type="password" required formControlName="password"></ion-input>
+      <div style="color: red; padding-top: 0.2rem" *ngIf="f.password.invalid&&f.password.touched">Veuillez Entrez un mot de passe</div>
+
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Télephone</ion-label>
+      <ion-input  formControlName="tel" required type="tel" maxlength="8" minlength="8"></ion-input>
+      <div style="color: red; padding-top: 0.2rem" *ngIf="f.tel.invalid&&f.tel.touched">Le numéro de téléphone est obligatoire </div>
+
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Date de naissance</ion-label>
+      <ion-input type="date" formControlName="datenais" required></ion-input>
+      <div style="color: red; padding-top: 0.2rem" *ngIf="f.datenais.invalid&&f.datenais.touched">Veuillez Entrez votre date de naissance</div>
+
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block">S'inscrire</ion-button>
+
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

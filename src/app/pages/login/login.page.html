@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Se connecter
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form  [formGroup]="form">
+    <ion-item lines="full">
+      <ion-label position="floating">CIN</ion-label>   
+      <ion-input type="text" required formControlName="cin" required maxlength="8"></ion-input>
+      <div style="color: red; padding-top: 0.2rem" *ngIf="f.cin.invalid&&f.cin.touched">Veuillez Entrez un CIN valid (8 chiffres)</div>
+
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Mot de passe</ion-label>
+      <ion-input type="password" required formControlName="password"></ion-input>
+      <div style="color: red; padding-top: 0.2rem" *ngIf="f.password.invalid&&f.password.touched">Veuillez Entrez un mot de passe</div>
+
+    </ion-item>
+
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block">Se connecter</ion-button>
+
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
