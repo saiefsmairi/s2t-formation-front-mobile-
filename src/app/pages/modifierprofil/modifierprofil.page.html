@@ -1,9 +1,82 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>modifierprofil</ion-title>
+    <ion-title>
+      Modifier profil
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <form  [formGroup]="form" (ngSubmit)="onSubmit()" >
+    <ion-item lines="full">
+      <ion-label position="floating">CIN</ion-label>   
+      <ion-input type="text"value="{{cin}}" formControlName="cin" readonly></ion-input>
+
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input type="email" required formControlName="nom" value="{{nom}}"></ion-input>
+      <div style="color: red; padding-top: 0.2rem" *ngIf="f.nom.invalid&&f.nom.touched">Votre Nom est obligatoire</div>
+
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating"  >prenom</ion-label>
+      <ion-input type="text" required formControlName="prenom" value="{{prenom}}"></ion-input>
+      <div style="color: red; padding-top: 0.2rem" *ngIf="f.prenom.invalid&&f.prenom.touched">Votre Prénom est obligatoire</div>
+
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating" >Email</ion-label>
+      <ion-input type="text" required formControlName="email" value="{{email}}"></ion-input>
+      <div style="color: red; padding-top: 0.2rem" *ngIf="f.email.invalid&&f.email.touched">Veuillez Entrez une adresse mail valid</div>
+
+    </ion-item>
+
+  
+
+    <ion-item lines="full">
+      <ion-label position="floating">Télephone</ion-label>
+      <ion-input  formControlName="tel" required type="tel" value="{{tel}}"></ion-input>
+      <div style="color: red; padding-top: 0.2rem" *ngIf="f.tel.invalid&&f.tel.touched">Le numéro de téléphone est obligatoire </div>
+
+    </ion-item>
+
+  
+    
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block">Modifier</ion-button>
+
+      </ion-col>
+    </ion-row>
+  </form>
+
+  <form  [formGroup]="Passwordform" (ngSubmit)="onPasswordchange()" >
+    <ion-item lines="full">
+      <ion-label position="stacked">Ancienne Mot de Passe</ion-label>   
+      <ion-input type="password"  formControlName="passwordold" reaonly></ion-input>
+
+    </ion-item>
+  
+
+    <ion-item lines="full">
+      <ion-label position="stacked">Nouveau Mot de Passe</ion-label>   
+      <ion-input type="password"  formControlName="passwordnew" ></ion-input>
+
+    </ion-item>
+
+  
+    
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block">Changer mot de passe</ion-button>
+
+      </ion-col>
+    </ion-row>
+  </form>
+
 
 </ion-content>

@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { TabsPage } from './tabs.page';
+import { AuthGuardGuardGuard } from 'src/app/guards/auth-guard-guard.guard';
 
 const routes: Routes = [
   {
     path: 'tabs',
     
     component: TabsPage,
-    
+    canActivate: [AuthGuardGuardGuard],
+
      children: [
       {
       path: 'messessions',
@@ -31,7 +33,25 @@ const routes: Routes = [
         path:'',
         redirectTo:'/tabs/messessions',
         pathMatch:'full'
-      }
+      },
+      {
+      path: 'session/:id',
+      loadChildren: () =>
+      import('../session/session.module').then(m => m.SessionPageModule)
+      },
+      
+      {
+      path: 'session/:id/reclamation',
+      loadChildren: () =>
+      import('../reclamersession/reclamersession.module').then(m => m.ReclamersessionPageModule)
+    }
+    ,
+    {
+      path: 'session/:id/evaluation',
+      loadChildren: () =>
+      import('../evaluersession/evaluersession.module').then(m => m.EvaluersessionPageModule)
+    }
+      
       ]
   }
 ];

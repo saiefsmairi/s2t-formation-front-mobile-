@@ -1,9 +1,31 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>listesessions</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/messessions"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-searchbar placeholder="Recherche par théme"   [(ngModel)]="theme"  (ionChange)="onInput($event)"
+  ></ion-searchbar>
+
+ 
+  <ion-card *ngFor="let item of tab">
+    <ion-item>
+      <ion-icon name="library-outline" slot="start"></ion-icon>
+      <ion-label>{{item.theme}}</ion-label>
+      <ion-button fill="outline" slot="end">S'inscrire</ion-button>
+    </ion-item>
+  
+    <ion-card-content>
+     Prix : {{item.prix}} <br>
+     Du {{item.date_debut}} au {{item.date_fin}}
+
+    </ion-card-content>
+  </ion-card>
+  
 
 </ion-content>
+

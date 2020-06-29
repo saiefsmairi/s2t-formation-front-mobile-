@@ -4,19 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ModifierprofilPageRoutingModule } from './modifierprofil-routing.module';
+import { ReclamersessionPageRoutingModule } from './reclamersession-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { ModifierprofilPage } from './modifierprofil.page';
+import { ReclamersessionPage } from './reclamersession.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ModifierprofilPageRoutingModule,
+    ReclamersessionPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [ModifierprofilPage]
+  declarations: [ReclamersessionPage]
 })
-export class ModifierprofilPageModule {}
+export class ReclamersessionPageModule {}

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{sessionname}}</ion-title>
+    <ion-buttons slot="primary" (click)="OpenReclamerEvaluerMenu($event)" >
+      <ion-button color="secondary">
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/messessions"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let document of listeDocuments">
+    <ion-item>
+      <ion-icon name="library-outline"  slot="start"></ion-icon>
+      <ion-label>{{ document.filename }}</ion-label>
+      <ion-button fill="outline" slot="end" (click)="presentModal(document.id)">Voir cours</ion-button>
+    </ion-item>
+  
+   
+  </ion-card>
+  
+</ion-content>
+
+

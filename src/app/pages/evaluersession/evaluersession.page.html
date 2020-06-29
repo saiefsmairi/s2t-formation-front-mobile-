@@ -1,0 +1,200 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>evaluer session</ion-title>
+  
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="./"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    
+    <form  name="form"  [formGroup]="form"  (ngSubmit)="onFeedbackFormSubmit()"  >
+  
+    <ion-list>
+      <ion-radio-group   formControlName="typecheck1">
+        <ion-list-header>
+          <ion-label>
+            N1 : {{quest1}}
+          </ion-label>
+        </ion-list-header>
+    
+        <ion-item>
+          <ion-label>trés bien</ion-label>
+          <ion-radio value="trés bien"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>bien</ion-label>
+          <ion-radio value="bien"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>passable</ion-label>
+          <ion-radio value="passable"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>insuffisant</ion-label>
+          <ion-radio value="insuffisant"></ion-radio>
+        </ion-item>
+    
+      </ion-radio-group>
+    </ion-list>
+  
+    <ion-list>
+        <ion-radio-group   formControlName="typecheck2">
+          <ion-list-header>
+            <ion-label>
+              N2 : {{quest2}}
+            </ion-label>
+          </ion-list-header>
+      
+          <ion-item>
+            <ion-label>trés bien</ion-label>
+            <ion-radio value="trés bien"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>bien</ion-label>
+            <ion-radio value="bien"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>passable</ion-label>
+            <ion-radio value="passable"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>insuffisant</ion-label>
+            <ion-radio value="insuffisant"></ion-radio>
+          </ion-item>
+      
+        </ion-radio-group>
+      </ion-list>
+
+      <ion-list>
+        <ion-radio-group   formControlName="typecheck3">
+          <ion-list-header>
+            <ion-label>
+              N3 : {{quest3}}
+            </ion-label>
+          </ion-list-header>
+      
+          <ion-item>
+            <ion-label>trés bien</ion-label>
+            <ion-radio value="trés bien"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>bien</ion-label>
+            <ion-radio value="bien"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>passable</ion-label>
+            <ion-radio value="passable"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>insuffisant</ion-label>
+            <ion-radio value="insuffisant"></ion-radio>
+          </ion-item>
+      
+        </ion-radio-group>
+      </ion-list>
+
+      <ion-list>
+        <ion-radio-group   formControlName="typecheck4">
+          <ion-list-header>
+            <ion-label>
+              N4 : {{quest4}}
+            </ion-label>
+          </ion-list-header>
+      
+          <ion-item>
+            <ion-label>trés bien</ion-label>
+            <ion-radio value="trés bien"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>bien</ion-label>
+            <ion-radio value="bien"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>passable</ion-label>
+            <ion-radio value="passable"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>insuffisant</ion-label>
+            <ion-radio value="insuffisant"></ion-radio>
+          </ion-item>
+      
+        </ion-radio-group>
+      </ion-list>
+
+      <ion-list>
+        <ion-radio-group   formControlName="typecheck5">
+          <ion-list-header>
+            <ion-label>
+              N5 : {{quest5}}
+            </ion-label>
+          </ion-list-header>
+      
+          <ion-item>
+            <ion-label>trés bien</ion-label>
+            <ion-radio value="trés bien"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>bien</ion-label>
+            <ion-radio value="bien"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>passable</ion-label>
+            <ion-radio value="passable"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>insuffisant</ion-label>
+            <ion-radio value="insuffisant"></ion-radio>
+          </ion-item>
+      
+        </ion-radio-group>
+      </ion-list>
+
+      <ion-list>
+        <ion-radio-group   formControlName="typecheck6">
+          <ion-list-header>
+            <ion-label>
+              N6 : {{quest6}}
+            </ion-label>
+          </ion-list-header>
+      
+          <ion-item>
+            <ion-label>oui</ion-label>
+            <ion-radio value="oui"></ion-radio>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>non</ion-label>
+            <ion-radio value="non"></ion-radio>
+          </ion-item>
+      
+      
+        </ion-radio-group>
+      </ion-list>
+    
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block">Envoyer</ion-button>
+  
+      </ion-col>
+    </ion-row>
+    </form>
+  </ion-content>
+  

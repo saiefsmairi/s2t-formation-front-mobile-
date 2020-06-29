@@ -1,9 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>messessions</ion-title>
+    <ion-title>Mes Sessions</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<!-- List of Text Items -->
+<ion-content><!-- Default Item -->
+  
+  <!-- Item as a Button -->
+  <ion-item button  [routerLink]="['/tabs/session', item.session_id]" *ngFor="let item of listSessions" >
+    <ion-label>
+      {{item.theme}}
+    </ion-label>
+  </ion-item>
 
 </ion-content>
+
+
+
+

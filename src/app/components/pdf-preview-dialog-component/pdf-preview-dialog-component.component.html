@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Modal Page</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+  <ngx-extended-pdf-viewer [src]="pdfSrc" useBrowserLocale="true" height="80vh"></ngx-extended-pdf-viewer>
+  
+</ion-content>

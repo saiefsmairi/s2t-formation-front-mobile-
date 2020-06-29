@@ -1,0 +1,25 @@
+
+
+<ion-list>
+  <ion-item>
+    
+    <ion-button fill="outline" (click)='closePopoverafterClick($event)' [routerLink]="['/tabs/session',id,'evaluation']">
+      <ion-icon slot="start" name="star"></ion-icon>
+      Evaluer
+    </ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-button color="danger" fill="outline"  (click)='closePopoverafterClick($event)' [routerLink]="['/tabs/session',id,'reclamation']">
+      <ion-icon slot="start" name="create"></ion-icon>
+      Réclamer
+    </ion-button>
+  </ion-item>
+
+</ion-list>
+
+
+<ion-buttons slot="secondary">
+  <ion-button (click)="dismiss()">
+    <ion-icon slot="icon-only" name="close"></ion-icon>
+  </ion-button>
+</ion-buttons>

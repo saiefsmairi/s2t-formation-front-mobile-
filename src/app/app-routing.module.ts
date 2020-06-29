@@ -14,6 +14,22 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'session',
+    loadChildren: () => import('./pages/session/session.module').then( m => m.SessionPageModule)
+  },
+  {
+    path: 'session-menu',
+    loadChildren: () => import('./pages/session-menu/session-menu.module').then( m => m.SessionMenuPageModule)
+  },
+  {
+    path: 'evaluersession',
+    loadChildren: () => import('./pages/evaluersession/evaluersession.module').then( m => m.EvaluersessionPageModule)
+  },
+  {
+    path: 'reclamersession',
+    loadChildren: () => import('./pages/reclamersession/reclamersession.module').then( m => m.ReclamersessionPageModule)
   }
 ];
 

@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-  <form  [formGroup]="form">
+  <form  [formGroup]="form" (ngSubmit)="onSubmit()" >
     <ion-item lines="full">
       <ion-label position="floating">CIN</ion-label>   
       <ion-input type="text" required formControlName="cin" required maxlength="8"></ion-input>

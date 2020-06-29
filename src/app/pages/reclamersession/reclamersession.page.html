@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>evaluersession</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="./"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <form  name="form"  [formGroup]="form"  (ngSubmit)="onFormSubmit()" >
+
+  <ion-list>
+    <ion-radio-group   formControlName="typecheck">
+      <ion-list-header>
+        <ion-label>
+          Probléme au niveau d'un
+        </ion-label>
+      </ion-list-header>
+  
+      <ion-item>
+        <ion-label>Formateur</ion-label>
+        <ion-radio value="Formateur"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Apprenant</ion-label>
+        <ion-radio value="Apprenant"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Cours</ion-label>
+        <ion-radio value="Cours"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Payement</ion-label>
+        <ion-radio value="Payement"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Autre</ion-label>
+        <ion-radio value="Autre"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-list>
+   <ion-list-header>
+        <ion-label>
+        Détails de votre probléme
+        </ion-label>
+      </ion-list-header>
+      <ion-item>
+    <ion-label position="floating">Description</ion-label>
+    <ion-textarea formControlName="details"></ion-textarea>
+  </ion-item>
+  </ion-list>
+  
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit" color="primary" expand="block">Envoyer</ion-button>
+
+    </ion-col>
+  </ion-row>
+  </form>
+</ion-content>
