@@ -1,3 +1,5 @@
+import { InscriSessionPage } from './../inscri-session/inscri-session.page';
+import { PopoverController, ModalController } from '@ionic/angular';
 import { Component, OnInit } from "@angular/core";
 import { SessionService } from "src/app/services/session.service";
 
@@ -16,7 +18,7 @@ export class ListesessionsPage implements OnInit {
   userId: any;
   myInput;
   tablestyle='bootstrap'
-  constructor(private sessionService: SessionService) {}
+  constructor(private modalController: ModalController,private sessionService: SessionService) {}
 
   ngOnInit(): void {
     this.userId = JSON.parse(sessionStorage.getItem("auth-user")).id;
@@ -45,4 +47,20 @@ export class ListesessionsPage implements OnInit {
       this.ngOnInit();
     }
   }
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: InscriSessionPage,
+      cssClass: 'my-custom-class',
+      componentProps: {
+     
+      }
+    });
+
+
+
+
+    return await modal.present();
+  }
+
 }

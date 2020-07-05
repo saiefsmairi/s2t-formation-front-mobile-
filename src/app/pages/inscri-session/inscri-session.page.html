@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>InscriSession</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-button expand="block" color="tertiary" (click)="addPhoto('library')">
+    <ion-icon slot="start" name="image"></ion-icon>
+    Ouvrir la bibliothèque
+  </ion-button>
+
+  <ion-button expand="block" color="secondary" (click)="addPhoto('camera')">
+    <ion-icon slot="start" name="camera"></ion-icon>
+    Prendre une photo
+  </ion-button>
+
+  <div class="flex">
+    <div class="img-box">
+      <img [src]="image">
+    </div>
+  </div>
+
+  <ion-button expand="block" color="warning" (click)="uploadFirebase()">
+    <ion-icon slot="start" name="cloud-upload"></ion-icon>
+    Envoyer la photo
+  </ion-button>
+
+</ion-content>

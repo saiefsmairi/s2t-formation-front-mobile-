@@ -15,32 +15,17 @@ export class AppComponent implements OnInit {
     {
       title: 'Home',
       url: '/',
-      icon: 'mail'
+      icon: 'home'
     },
     {
       title: 'Signup',
       url: '/signup',
-      icon: 'paper-plane'
+      icon: 'log-in'
     },
     {
       title: 'Login',
       url: '/login',
-      icon: 'heart'
-    },
-    {
-      title: 'Archived',
-      url: '/folder/Archived',
-      icon: 'archive'
-    },
-    {
-      title: 'Trash',
-      url: '/folder/Trash',
-      icon: 'trash'
-    },
-    {
-      title: 'Spam',
-      url: '/folder/Spam',
-      icon: 'warning'
+      icon: 'key'
     }
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];

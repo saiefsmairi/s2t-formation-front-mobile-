@@ -1,7 +1,8 @@
 {
   "name": "s2t-formation",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

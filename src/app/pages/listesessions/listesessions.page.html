@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>listesessions</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="tabs/messessions"></ion-back-button>
@@ -16,7 +16,7 @@
     <ion-item>
       <ion-icon name="library-outline" slot="start"></ion-icon>
       <ion-label>{{item.theme}}</ion-label>
-      <ion-button fill="outline" slot="end">S'inscrire</ion-button>
+      <ion-button fill="outline" slot="end" (click)="presentModal()">S'inscrire</ion-button>
     </ion-item>
   
     <ion-card-content>

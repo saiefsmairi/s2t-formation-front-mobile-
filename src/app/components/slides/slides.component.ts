@@ -22,4 +22,8 @@ this.router.navigate(['signup']);
   tosigninPage(){
     this.router.navigate(['login']);
       }
+
+      inscrisession(){
+        this.router.navigate(['inscri-session']);
+      }
 }

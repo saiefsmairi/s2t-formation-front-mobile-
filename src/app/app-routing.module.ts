@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'reclamersession',
     loadChildren: () => import('./pages/reclamersession/reclamersession.module').then( m => m.ReclamersessionPageModule)
+  },
+  {
+    path: 'inscri-session',
+    loadChildren: () => import('./pages/inscri-session/inscri-session.module').then( m => m.InscriSessionPageModule)
   }
 ];
 
