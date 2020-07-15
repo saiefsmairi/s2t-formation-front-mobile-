@@ -1,12 +1,18 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
       Créer un compte Apprenant
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+
+<ion-content   [scrollEvents]="true"
+>
+  
+    <img src="https://i.imgur.com/bLrsTQo.png" />
+
+    
   <form  [formGroup]="form" (ngSubmit)="onSubmit()" >
     <ion-item lines="full">
       <ion-label position="floating">CIN</ion-label>   
@@ -59,6 +65,11 @@
     <ion-row>
       <ion-col>
         <ion-button type="submit" color="primary" expand="block">S'inscrire</ion-button>
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
 
       </ion-col>
     </ion-row>

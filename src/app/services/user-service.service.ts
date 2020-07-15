@@ -174,13 +174,13 @@ export class UserService {
     this.http.post(USERS_API + 'depot-recu', photo).subscribe((response) => {});
   }
 
-  public ajoutRecuMobile(recu: any):any {
-    const params = new HttpParams().set('recu', recu);
+  public ajoutRecuMobile(recu: any):Observable<any> {
+    const params = new HttpParams();
     httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       params,
     };
-    return this.http.post(USERS_API + 'depot-recu-mobile' , recu).subscribe((response) => {});
+    return this.http.post(USERS_API + 'depot-recu-mobile',recu,httpOptions);
 
   }
 

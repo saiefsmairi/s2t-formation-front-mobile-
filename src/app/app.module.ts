@@ -15,6 +15,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HashLocationStrategy } from '@angular/common';
 import { LocalNotifications} from '@ionic-native/local-notifications/ngx'
+import { Base64 } from '@ionic-native/base64/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,7 +37,8 @@ import { LocalNotifications} from '@ionic-native/local-notifications/ngx'
     NgxExtendedPdfViewerModule,
     ReactiveFormsModule,
     Camera,
-    LocalNotifications
+    LocalNotifications,
+    Base64
     
 
   ],

@@ -30,15 +30,15 @@ export class InscriSessionPage implements OnInit {
     if (source === "library") {
       console.log("library");
       const libraryImage = await this.openLibrary();
-      this.image = "data:image/jpg;base64," + libraryImage;
+      this.image ="data:image/jpg;base64," +  libraryImage;
     } else {
       console.log("camera");
       const cameraImage = await this.openCamera();
       this.image = "data:image/jpg;base64," + cameraImage;
     }
-    fetch(this.image)
+   /*  fetch(this.image)
       .then((res) => res.blob())
-      .then(console.log);
+      .then(console.log); */
   }
 
   async openCamera() {
@@ -70,7 +70,7 @@ export class InscriSessionPage implements OnInit {
   uploadFirebase() {
     console.log(this.image);
 
-    var BASE64_MARKER = ";base64,";
+   /*  var BASE64_MARKER = ";base64,";
 
     var base64Index = this.image.indexOf(BASE64_MARKER) + BASE64_MARKER.length;
     var base64 = this.image.substring(base64Index);
@@ -82,13 +82,15 @@ export class InscriSessionPage implements OnInit {
       array[i] = raw.charCodeAt(i);
     }
     console.log(array);
-
+ */
    
+    const uploadImageData = new FormData();
+    uploadImageData.append('recu', this.image);
+    debugger;
 
     this.userService.ajoutRecuMobile(this.image).subscribe(
       (data) => {
-        console.log(data);
-    
+          
       },
       (err) => {
 
