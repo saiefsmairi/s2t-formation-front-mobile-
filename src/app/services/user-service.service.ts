@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const USERS_API = 'http://localhost:9080/api/users/';
-const MAIL_API = 'http://localhost:9080/api/test/';
-const NOTIF_API = 'http://localhost:9080/api/notif/';
+const USERS_API = 'http://192.168.1.46:9080/api/users/';
+const MAIL_API = 'http://192.168.1.46:9080/api/test/';
+const NOTIF_API = 'http://192.168.1.46:9080/api/notif/';
 
 const params = new HttpParams();
 
@@ -180,7 +180,7 @@ export class UserService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       params,
     };
-    return this.http.post(USERS_API + 'depot-recu-mobile',recu,httpOptions);
+    return this.http.post(USERS_API + 'depot-recu-mobile',recu);
 
   }
 

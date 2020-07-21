@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "pdf-preview-dialog-component.component.scss"
+    ],
+    "names": [],
+    "file": "pdf-preview-dialog-component.component.css"
+}

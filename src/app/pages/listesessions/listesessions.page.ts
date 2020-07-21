@@ -2,6 +2,7 @@ import { InscriSessionPage } from './../inscri-session/inscri-session.page';
 import { PopoverController, ModalController } from '@ionic/angular';
 import { Component, OnInit } from "@angular/core";
 import { SessionService } from "src/app/services/session.service";
+import { isNgTemplate } from '@angular/compiler';
 
 @Component({
   selector: "app-listesessions",
@@ -24,6 +25,10 @@ export class ListesessionsPage implements OnInit {
     this.userId = JSON.parse(sessionStorage.getItem("auth-user")).id;
 
     // this.role="apprenant/societe";
+        this.loadData();
+  }
+
+  loadData(){
     const res = this.sessionService.getAllSessions(this.userId);
     res.subscribe(
       (data) => {
@@ -48,15 +53,19 @@ export class ListesessionsPage implements OnInit {
     }
   }
 
-  async presentModal() {
+  async presentModal(session) {
     const modal = await this.modalController.create({
       component: InscriSessionPage,
       cssClass: 'my-custom-class',
       componentProps: {
-     
+     sessionId:session.session_id,
+     userId:this.userId,
+     prix:session.prix
       }
     });
-
+modal.onDidDismiss().then(res=>{
+this.loadData();
+})
 
 
 

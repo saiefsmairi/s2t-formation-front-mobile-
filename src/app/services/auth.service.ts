@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
-const AUTH_API = 'http://localhost:9080/api/auth/';
+const AUTH_API = 'http://192.168.1.46:9080/api/auth/';
 const params = new HttpParams();
 
 let httpOptions = {

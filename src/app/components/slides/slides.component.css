@@ -1,0 +1,14 @@
+ion-slide {
+  padding: 40px 20px 160px 20px;
+  display: block;
+}
+
+ion-slide img {
+  width: 500px;
+}
+
+ion-slide h3 {
+  font-size: 36px;
+  font-weight: bold;
+}
+/*# sourceMappingURL=slides.component.css.map */

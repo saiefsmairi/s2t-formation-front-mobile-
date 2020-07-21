@@ -13,10 +13,10 @@
 
  
   <ion-card *ngFor="let item of tab">
-    <ion-item>
+    <ion-item> 
       <ion-icon name="library-outline" slot="start"></ion-icon>
       <ion-label>{{item.theme}}</ion-label>
-      <ion-button fill="outline" slot="end" (click)="presentModal()">S'inscrire</ion-button>
+      <ion-button fill="outline" slot="end" (click)="presentModal(item)">S'inscrire</ion-button>
     </ion-item>
   
     <ion-card-content>
