@@ -13,6 +13,7 @@ import { IonicModule } from '@ionic/angular';
   ],
   imports: [
     CommonModule,
+    
 
   ]
 })

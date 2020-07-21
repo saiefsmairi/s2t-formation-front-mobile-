@@ -5,7 +5,8 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { PdfPreviewDialogComponentComponent } from 'src/app/components/pdf-preview-dialog-component/pdf-preview-dialog-component.component';
 import { PopoverController } from '@ionic/angular';
-
+import { FileOpener } from '@ionic-native/file-opener/ngx';
+import { File } from '@ionic-native/file/ngx';
 @Component({
   selector: 'app-session',
   templateUrl: './session.page.html',
@@ -15,11 +16,15 @@ export class SessionPage implements OnInit {
   listeDocuments: any;
   listeApprenantsInscrits: any;
   private sub: any;
-id:any;
+id: any;
 sessionname;
-  constructor(public popoverController: PopoverController,private route: ActivatedRoute,private sessionService:SessionService,public modalController: ModalController) {
+pdfSrc: any;
+  constructor(public popoverController: PopoverController, private route: ActivatedRoute,
+              private sessionService: SessionService, public modalController: ModalController,
+              private file: File,
+              private fileOpener: FileOpener,) {
     this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id'];
+      this.id = +params.id;
 
 
    });
@@ -33,18 +38,19 @@ sessionname;
       event: ev,
       translucent: true,
       componentProps: {
-        'id': this.id
+        id: this.id
         }
     });
     return await popover.present();
   }
 
    async presentModal(id) {
+
     const modal = await this.modalController.create({
       component: PdfPreviewDialogComponentComponent,
       cssClass: 'my-custom-class',
       componentProps: {
-      'id':id
+      id
       }
     });
 
@@ -58,7 +64,7 @@ sessionname;
   ngOnInit() {
 
     this.sessionService.getSessionByid(this.id).subscribe(data => {
-this.sessionname=data.theme;
+this.sessionname = data.theme;
     });
     this.loadData();
   }
@@ -70,5 +76,37 @@ this.sessionname=data.theme;
       this.listeApprenantsInscrits = data.apprenants;
     });
   }
+
+
+  openPDFFile(cours){
+    this.file.createFile(this.file.externalRootDirectory, cours.filename, true).then((response) => {
+       console.log('file created', response);
+
+       const byteCharacters = atob(cours.file);
+       const byteNumbers = new Array(byteCharacters.length);
+       for (let i = 0; i < byteCharacters.length; i++) {
+           byteNumbers[i] = byteCharacters.charCodeAt(i);
+       }
+
+       const byteArray = new Uint8Array(byteNumbers);
+       const blob = new Blob([byteArray], {type: 'application/pdf'});
+
+       this.file.writeExistingFile(this.file.externalRootDirectory, cours.filename, blob).then((response) => {
+         console.log('successfully wrote to file', response);
+         this.fileOpener.open(this.file.externalRootDirectory + cours.filename, 'application/pdf').then((response) => {
+           console.log('opened PDF file successfully', response);
+         }).catch((err) => {
+             console.log('error in opening pdf file', err);
+         });
+       }).catch((err) => {
+         console.log('error writing to file', err);
+       });
+
+    }).catch((err) => {
+       console.log('Error creating file', err);
+    });
+ }
+
+
 
 }

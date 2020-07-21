@@ -1,4 +1,4 @@
-<ion-header>
+ <ion-header>
   <ion-toolbar color="primary">
     <ion-title>Inscription dans la session</ion-title>
     <ion-buttons slot="end">
@@ -11,25 +11,25 @@
 
 <ion-content>
 
-  <ion-button expand="block" color="tertiary" (click)="addPhoto('library')">
+  <ion-button expand="block" color="tertiary" (click)="selectPhoto()">
     <ion-icon slot="start" name="image"></ion-icon>
     Ouvrir la bibliothèque
   </ion-button>
 
-  <ion-button expand="block" color="secondary" (click)="addPhoto('camera')">
+  <ion-button expand="block" color="secondary" (click)="takePhoto()">
     <ion-icon slot="start" name="camera"></ion-icon>
     Prendre une photo
   </ion-button>
 
   <div class="flex">
     <div class="img-box">
-      <img [src]="image">
+      <img  [src]="myPhoto"/>
     </div>
   </div>
 
-  <ion-button expand="block" color="warning" (click)="uploadFirebase()">
+  <ion-button expand="block" color="warning" (click)="uploadPhoto()">
     <ion-icon slot="start" name="cloud-upload"></ion-icon>
     Envoyer la photo
   </ion-button>
 
-</ion-content>
+</ion-content>  

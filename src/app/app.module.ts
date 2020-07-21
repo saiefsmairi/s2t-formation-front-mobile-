@@ -16,6 +16,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HashLocationStrategy } from '@angular/common';
 import { LocalNotifications} from '@ionic-native/local-notifications/ngx'
 import { Base64 } from '@ionic-native/base64/ngx';
+import { File } from '@ionic-native/file/ngx';
+import { FileOpener } from '@ionic-native/file-opener/ngx';
+import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +32,8 @@ import { Base64 } from '@ionic-native/base64/ngx';
     NgxExtendedPdfViewerModule,
     FormsModule, ReactiveFormsModule ,
     NgxDatatableModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+ 
   ],
   providers: [
     StatusBar,
@@ -38,8 +43,10 @@ import { Base64 } from '@ionic-native/base64/ngx';
     ReactiveFormsModule,
     Camera,
     LocalNotifications,
-    Base64
-    
+    Base64,
+    File,
+    FileOpener,
+    DocumentViewer
 
   ],
   bootstrap: [AppComponent]

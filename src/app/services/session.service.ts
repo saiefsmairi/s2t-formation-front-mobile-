@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const SESSION_API = 'http://localhost:9080/api/sessions/';
-const REGISTRE_API = 'http://localhost:9080/api/registre/';
+const SESSION_API = 'http://192.168.1.46:9080/api/sessions/';
+const REGISTRE_API = 'http://192.168.1.46:9080/api/registre/';
 
 const params = new HttpParams();
 
@@ -26,7 +26,7 @@ export class SessionService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       params
     };
-    return this.http.get(SESSION_API + 'sessions/' +
+    return this.http.get(SESSION_API + 'sessions-apprenant/' +
       userId, httpOptions);
 
   }
